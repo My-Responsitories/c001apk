@@ -1,0 +1,15 @@
+name: Sync
+on:
+  push:
+    branches: [ "sync" ]
+  schedule:
+  - cron:  '49 5 * * *'
+  workflow_dispatch:
+
+jobs:
+   sync:
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh repo sync My-Responsitories/c001apk --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
