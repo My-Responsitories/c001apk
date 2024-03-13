@@ -10,6 +10,6 @@ jobs:
    sync:
     runs-on: ubuntu-latest
     steps:
-      - run: gh repo sync My-Responsitories/c001apk --force
+      - run: gh repo sync My-Responsitories/c001apk --branch main --force
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
